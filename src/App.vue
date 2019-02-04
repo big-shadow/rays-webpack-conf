@@ -1,5 +1,5 @@
 <template>
-  <div class="container center-content"><router-view /></div>
+  <div class="container"><router-view /></div>
 </template>
 
 <style lang="scss" scoped>

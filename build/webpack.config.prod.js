@@ -1,18 +1,18 @@
-"use strict";
+'use strict'
 
-const merge = require("webpack-merge");
-const baseConfig = require("./webpack.config.base");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const merge = require('webpack-merge')
+const baseConfig = require('./webpack.config.base')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = merge(baseConfig, {
-  mode: "production",
+  mode: 'production',
   optimization: {
     splitChunks: {
       cacheGroups: {
         commons: {
           test: /[\\/]node_modules[\\/]/,
-          name: "vendor",
-          chunks: "all"
+          name: 'vendor',
+          chunks: 'all'
         }
       }
     }
@@ -21,13 +21,13 @@ module.exports = merge(baseConfig, {
     rules: [
       {
         test: /\.css?$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"]
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       }
     ]
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "main.css"
+      filename: 'main.css'
     })
   ]
-});
+})
